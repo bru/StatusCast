@@ -1,0 +1,5 @@
+StatusCast/socialcast.yml
+StatusCast/gems
+StatusCast.xcodeproj
+!StatusCast.xcodeproj/.gitignore
+!StatusCast.xcodeproj/project.pbxproj
