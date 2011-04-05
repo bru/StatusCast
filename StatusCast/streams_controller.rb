@@ -42,7 +42,7 @@ class StreamsController
   end
   
   def outlineView(view, numberOfChildrenOfItem:item)
-    return 2 if item.nil?
+    return @streams.size if item.nil?
     return item[:value].count unless item.is_a? Socialcast::Stream
     return 0
   end
