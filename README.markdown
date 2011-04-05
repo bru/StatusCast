@@ -14,10 +14,12 @@ For the time being you'll need macruby and the bundler gem in order to setup the
 
 * copy socializer.yml.example to socializer.yml, open it in your favourite editor and fill in the blanks.
 * make sure your bundle is up to date:
-  cd StatusCast
-  bundle install 
 
-open the project in XCode, compile, run/deploy.
+    `# cd StatusCast`
+    
+    `# bundle install`
+
+* open the project in XCode, compile, run/deploy.
 
 ## TODO
 
