@@ -34,7 +34,7 @@ class AppDelegate
   def applicationDidFinishLaunching(a_notification)
     # Insert code here to initialize your application
     config = YAML.load(File.open(File.join(File.dirname(__FILE__), "socialcast.yml")))
-    @api ||= Socialcast::API.new(config["username"], config["password"], config["domain"])
+    @api ||= ::Socialcast::API.new(config["username"], config["password"], config["domain"])
     
     @current_status.stringValue = ""
     

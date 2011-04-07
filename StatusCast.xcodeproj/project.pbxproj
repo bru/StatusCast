@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7323CB5A13474583004F1886 /* group.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB5913474583004F1886 /* group.rb */; };
 		7323CB5D13490A04004F1886 /* destinations_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB5C13490A04004F1886 /* destinations_controller.rb */; };
 		7323CB5F13490B01004F1886 /* messages_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB5E13490B01004F1886 /* messages_controller.rb */; };
 		7323CB61134916FA004F1886 /* streams_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB60134916FA004F1886 /* streams_controller.rb */; };
-		7323CB631349172B004F1886 /* stream.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB621349172B004F1886 /* stream.rb */; };
 		7323CB671349B9F8004F1886 /* socialcast.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB661349B9F8004F1886 /* socialcast.yml */; };
 		7352DC741341391A00F6FD44 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7352DC731341391A00F6FD44 /* Cocoa.framework */; };
 		7352DC761341391A00F6FD44 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7352DC751341391A00F6FD44 /* MacRuby.framework */; };
@@ -20,20 +18,13 @@
 		7352DC841341391A00F6FD44 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC821341391A00F6FD44 /* MainMenu.xib */; };
 		7352DC871341391A00F6FD44 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC861341391A00F6FD44 /* rb_main.rb */; };
 		7352DC891341391A00F6FD44 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC881341391A00F6FD44 /* AppDelegate.rb */; };
-		7379353E13454400001613AD /* api.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7379353A13454400001613AD /* api.rb */; };
-		7379353F13454400001613AD /* comment.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7379353B13454400001613AD /* comment.rb */; };
-		7379354013454400001613AD /* like.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7379353C13454400001613AD /* like.rb */; };
-		7379354113454400001613AD /* message.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7379353D13454400001613AD /* message.rb */; };
-		73819C621345398000E78388 /* gems in Resources */ = {isa = PBXBuildFile; fileRef = 73819C611345398000E78388 /* gems */; };
-		73984A1D13465D9B001D8B85 /* user.rb in Resources */ = {isa = PBXBuildFile; fileRef = 73984A1C13465D9B001D8B85 /* user.rb */; };
+		73DCD24F134D1CA500175BC2 /* gems in Resources */ = {isa = PBXBuildFile; fileRef = 73DCD24E134D1CA500175BC2 /* gems */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7323CB5913474583004F1886 /* group.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = group.rb; sourceTree = "<group>"; };
 		7323CB5C13490A04004F1886 /* destinations_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = destinations_controller.rb; sourceTree = "<group>"; };
 		7323CB5E13490B01004F1886 /* messages_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = messages_controller.rb; sourceTree = "<group>"; };
 		7323CB60134916FA004F1886 /* streams_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = streams_controller.rb; sourceTree = "<group>"; };
-		7323CB621349172B004F1886 /* stream.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = stream.rb; sourceTree = "<group>"; };
 		7323CB661349B9F8004F1886 /* socialcast.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socialcast.yml; sourceTree = "<group>"; };
 		7352DC6F1341391A00F6FD44 /* StatusCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7352DC731341391A00F6FD44 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -45,12 +36,7 @@
 		7352DC831341391A00F6FD44 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7352DC861341391A00F6FD44 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		7352DC881341391A00F6FD44 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
-		7379353A13454400001613AD /* api.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = api.rb; sourceTree = "<group>"; };
-		7379353B13454400001613AD /* comment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = comment.rb; sourceTree = "<group>"; };
-		7379353C13454400001613AD /* like.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = like.rb; sourceTree = "<group>"; };
-		7379353D13454400001613AD /* message.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = message.rb; sourceTree = "<group>"; };
-		73819C611345398000E78388 /* gems */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gems; path = StatusCast/gems/macruby/1.9.2/gems; sourceTree = "<group>"; };
-		73984A1C13465D9B001D8B85 /* user.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = user.rb; sourceTree = "<group>"; };
+		73DCD24E134D1CA500175BC2 /* gems */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gems; path = StatusCast/gems; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +55,7 @@
 		7352DC641341391A00F6FD44 = {
 			isa = PBXGroup;
 			children = (
-				73819C611345398000E78388 /* gems */,
+				73DCD24E134D1CA500175BC2 /* gems */,
 				7352DC781341391A00F6FD44 /* StatusCast */,
 				7352DC721341391A00F6FD44 /* Frameworks */,
 				7352DC701341391A00F6FD44 /* Products */,
@@ -131,25 +117,10 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		7379353913454400001613AD /* socialcast */ = {
-			isa = PBXGroup;
-			children = (
-				7379353A13454400001613AD /* api.rb */,
-				7379353B13454400001613AD /* comment.rb */,
-				7379353C13454400001613AD /* like.rb */,
-				7379353D13454400001613AD /* message.rb */,
-				73984A1C13465D9B001D8B85 /* user.rb */,
-				7323CB5913474583004F1886 /* group.rb */,
-				7323CB621349172B004F1886 /* stream.rb */,
-			);
-			path = socialcast;
-			sourceTree = "<group>";
-		};
 		73ED0CD81344E80700FCF0C3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				7323CB661349B9F8004F1886 /* socialcast.yml */,
-				7379353913454400001613AD /* socialcast */,
 				7352DC881341391A00F6FD44 /* AppDelegate.rb */,
 				7323CB5C13490A04004F1886 /* destinations_controller.rb */,
 				7323CB5E13490B01004F1886 /* messages_controller.rb */,
@@ -226,18 +197,11 @@
 				7352DC841341391A00F6FD44 /* MainMenu.xib in Resources */,
 				7352DC871341391A00F6FD44 /* rb_main.rb in Resources */,
 				7352DC891341391A00F6FD44 /* AppDelegate.rb in Resources */,
-				73819C621345398000E78388 /* gems in Resources */,
-				7379353E13454400001613AD /* api.rb in Resources */,
-				7379353F13454400001613AD /* comment.rb in Resources */,
-				7379354013454400001613AD /* like.rb in Resources */,
-				7379354113454400001613AD /* message.rb in Resources */,
-				73984A1D13465D9B001D8B85 /* user.rb in Resources */,
-				7323CB5A13474583004F1886 /* group.rb in Resources */,
 				7323CB5D13490A04004F1886 /* destinations_controller.rb in Resources */,
 				7323CB5F13490B01004F1886 /* messages_controller.rb in Resources */,
 				7323CB61134916FA004F1886 /* streams_controller.rb in Resources */,
-				7323CB631349172B004F1886 /* stream.rb in Resources */,
 				7323CB671349B9F8004F1886 /* socialcast.yml in Resources */,
+				73DCD24F134D1CA500175BC2 /* gems in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

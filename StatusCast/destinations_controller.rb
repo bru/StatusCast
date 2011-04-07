@@ -34,7 +34,7 @@ class DestinationsController
   
   def initialize(api)
     @api = api
-    @items = @api.groups
+    @items = @api.groups.map {|membership| membership.group } 
   end
   
   def numberOfItemsInComboBox(view)
