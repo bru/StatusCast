@@ -23,9 +23,9 @@ For the time being you'll need macruby and the bundler gem in order to setup the
 
 ## TODO
 
-* refactor socialcast api into its own gem
+√ refactor socialcast api into its own gem
 * add preferences panel
-* move to asynchronous API requests
+√ move to asynchronous API requests (partial)
 * add content filters
 * let the messages be of arbitrary size
 * add message (un)like action

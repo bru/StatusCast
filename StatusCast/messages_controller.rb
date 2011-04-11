@@ -39,7 +39,7 @@ class MessagesController
   end
   
   def update_messages
-    @messages = @api.messages(@stream)
+    @messages = Status.from_socialcast_messages(@api.messages(@stream))
   end
   
   def set_stream(stream)
@@ -51,48 +51,35 @@ class MessagesController
   end
   
   def set_search(query)
-    @api.debug = true
-    @messages = @api.search(:q => query)
-    @api.debug = false
+    @messages = Status.from_socialcast_messages(@api.search(:q => query))
   end
   
   def numberOfRowsInTableView(view)
     @messages.size
   end
-  
-  def tableView(view, objectValueForTableColumn:column, row:index)
-    status = @messages[index]
+
+  def tableView(view, willDisplayCell:cell, forTableColumn:column, row:row)
     case column.identifier
     when 'avatar'
-      if (status.user && status.user.avatars)
-        NSImage.alloc.initByReferencingURL NSURL.URLWithString(status.user.avatars.square70)
-      else
-        NSImage.imageNamed 'NSUser'
+      if cell.image.name == "NSUser"
+        status = @messages[row]
+        status.download do |data|
+          NSLog("Loaded image for avatar on row #{row.to_s}")
+          status.image = NSImage.alloc.initWithData data
+          view.reloadDataForRowIndexes NSIndexSet.indexSetWithIndex(row), columnIndexes:NSIndexSet.indexSetWithIndex(0)
+        end
       end
-    when 'message'
-      user_font  = NSFont.fontWithName("Helvetica", size:11.0)
-      user_color = NSColor.purpleColor
-      date_font  = NSFont.fontWithName("Helvetica", size: 11.0)
-      date_color = NSColor.lightGrayColor
-      title_font = NSFont.fontWithName("Helvetica-BoldOblique", size: 11.0)
-      user_attributes = { NSFontAttributeName => user_font, NSForegroundColorAttributeName => user_color}
-      date_attributes = { NSFontAttributeName => date_font, NSForegroundColorAttributeName => date_color}
-      title_attributes = { NSFontAttributeName => title_font }
-      
-
-      user_string = NSAttributedString.alloc.initWithString(status.user.name, attributes: user_attributes) if status.user.name
-      date_string = NSAttributedString.alloc.initWithString(" on #{DateTime.parse(status.created_at).strftime('%d/%m/%Y %H:%M')}\n", attributes: date_attributes) 
-      body_string = NSAttributedString.alloc.initWithString(status.body) if status.body
-      title_string = NSAttributedString.alloc.initWithString("#{status.title}\n", attributes: title_attributes) if status.title
-      
-#      NSLog("About to add object with:\n#{user_string ? user_string.string : "NO USER"}\n#{date_string ? date_string.string : "NO DATE"}\n#{body_string ? body_string.string : "NO BODY" }\n#{title_string ? title_string.string : "NO TITLE"}")
-      message_string = NSMutableAttributedString.alloc.initWithString("")
-      message_string.appendAttributedString(user_string) if user_string
-      message_string.appendAttributedString(date_string) if date_string
-      message_string.appendAttributedString(title_string) if title_string
-      message_string.appendAttributedString(body_string) if body_string
-      return message_string
     end
   end
+  
+  def tableView(view, objectValueForTableColumn:column, row:row)
+    status = @messages[row]
+    status.send column.identifier, column.dataCellForRow(row)
+  end
+
+  def tableView(view, shouldTrackCell:cell, forTableColumn:column, row:index)
+    true
+  end
+  
   
 end

@@ -33,8 +33,10 @@ class AppDelegate
   
   def applicationDidFinishLaunching(a_notification)
     # Insert code here to initialize your application
-    config = YAML.load(File.open(File.join(File.dirname(__FILE__), "socialcast.yml")))
-    @api ||= ::Socialcast::API.new(config["username"], config["password"], config["domain"])
+    Socialcast.configuration do |socialcast|
+      socialcast.config_file = File.join(File.dirname(__FILE__), "socialcast.yml")
+    end
+    @api ||= ::Socialcast.api
     
     @current_status.stringValue = ""
     
@@ -44,9 +46,11 @@ class AppDelegate
     
     destinations = DestinationsController.new(@api)
     destination_popup.dataSource = destinations    
+    destination_popup.selectItemAtIndex 0
 
     messages = MessagesController.new(@api)
     statuses_table_view.dataSource = messages
+    statuses_table_view.delegate= messages
     
   end
   
@@ -54,18 +58,19 @@ class AppDelegate
     body = current_status.stringValue
     params = { "message[title]" => "", "message[body]" => "#{body}"}
     destination_index = destination_popup.indexOfSelectedItem
-    if destination_index != -1
-      destination = destination_popup.dataSource.items[destination_index]
+    if destination_index > 0
+      destination = destination_popup.selectedItem
       params["message[group_id]"] = destination.id
     end
     reply = @api.add_message(params)
-    message = Socialcast::Message.from_xml(reply)
+    message = Socialcast::Message.parse(reply)
     current_status.stringValue = ""
     refreshStatusList
   end
   
   def search(sender)
     q = search_field.stringValue
+    streams_outline.deselectAll(sender)
     if q == ""
       statuses_table_view.dataSource.set_default_stream
       refreshStatusList

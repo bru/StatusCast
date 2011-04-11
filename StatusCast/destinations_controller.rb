@@ -34,7 +34,8 @@ class DestinationsController
   
   def initialize(api)
     @api = api
-    @items = @api.groups.map {|membership| membership.group } 
+    @items = Destination.from_socialcast_groups(@api.groups.map {|membership| membership.group })
+    @items.unshift Destination.new(0, "My Colleagues")
   end
   
   def numberOfItemsInComboBox(view)

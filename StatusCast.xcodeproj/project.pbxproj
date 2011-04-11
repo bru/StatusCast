@@ -18,6 +18,8 @@
 		7352DC841341391A00F6FD44 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC821341391A00F6FD44 /* MainMenu.xib */; };
 		7352DC871341391A00F6FD44 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC861341391A00F6FD44 /* rb_main.rb */; };
 		7352DC891341391A00F6FD44 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC881341391A00F6FD44 /* AppDelegate.rb */; };
+		737CAF02134F5E2A008886EE /* status.rb in Resources */ = {isa = PBXBuildFile; fileRef = 737CAF01134F5E2A008886EE /* status.rb */; };
+		737CAF04134FCB89008886EE /* destination.rb in Resources */ = {isa = PBXBuildFile; fileRef = 737CAF03134FCB89008886EE /* destination.rb */; };
 		73DCD24F134D1CA500175BC2 /* gems in Resources */ = {isa = PBXBuildFile; fileRef = 73DCD24E134D1CA500175BC2 /* gems */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		7352DC831341391A00F6FD44 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7352DC861341391A00F6FD44 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		7352DC881341391A00F6FD44 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		737CAF01134F5E2A008886EE /* status.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = status.rb; sourceTree = "<group>"; };
+		737CAF03134FCB89008886EE /* destination.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = destination.rb; sourceTree = "<group>"; };
 		73DCD24E134D1CA500175BC2 /* gems */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gems; path = StatusCast/gems; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,9 +124,11 @@
 		73ED0CD81344E80700FCF0C3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				737CAF03134FCB89008886EE /* destination.rb */,
 				7323CB661349B9F8004F1886 /* socialcast.yml */,
 				7352DC881341391A00F6FD44 /* AppDelegate.rb */,
 				7323CB5C13490A04004F1886 /* destinations_controller.rb */,
+				737CAF01134F5E2A008886EE /* status.rb */,
 				7323CB5E13490B01004F1886 /* messages_controller.rb */,
 				7323CB60134916FA004F1886 /* streams_controller.rb */,
 			);
@@ -202,6 +208,8 @@
 				7323CB61134916FA004F1886 /* streams_controller.rb in Resources */,
 				7323CB671349B9F8004F1886 /* socialcast.yml in Resources */,
 				73DCD24F134D1CA500175BC2 /* gems in Resources */,
+				737CAF02134F5E2A008886EE /* status.rb in Resources */,
+				737CAF04134FCB89008886EE /* destination.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

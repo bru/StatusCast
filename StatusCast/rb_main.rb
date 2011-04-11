@@ -44,8 +44,8 @@ Dir.glob(File.join(dir_path, 'gems/*')).each do |path|
   end
 end
 
-require 'socialcast'
 
+require 'socialcast'
 Dir.glob(File.join(dir_path, '*.{rb,rbo}')).map { |x| File.basename(x, File.extname(x)) }.uniq.each do |path|
   if path != main
     require(path)
