@@ -10,9 +10,13 @@
 		7323CB5D13490A04004F1886 /* destinations_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB5C13490A04004F1886 /* destinations_controller.rb */; };
 		7323CB5F13490B01004F1886 /* messages_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB5E13490B01004F1886 /* messages_controller.rb */; };
 		7323CB61134916FA004F1886 /* streams_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB60134916FA004F1886 /* streams_controller.rb */; };
-		7323CB671349B9F8004F1886 /* socialcast.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7323CB661349B9F8004F1886 /* socialcast.yml */; };
+		732B5BBF13576A2700A556D4 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732B5BBE13576A2700A556D4 /* Preferences.xib */; };
+		732B5BC213578EFF00A556D4 /* preferences_controller.rb in Resources */ = {isa = PBXBuildFile; fileRef = 732B5BC113578EFF00A556D4 /* preferences_controller.rb */; };
+		732B5BC41357929C00A556D4 /* interval.rb in Resources */ = {isa = PBXBuildFile; fileRef = 732B5BC31357929C00A556D4 /* interval.rb */; };
+		7347A59D135905E000E087D5 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7347A59C135905E000E087D5 /* MacRuby.framework */; };
+		734D7716135598BC00962C60 /* async_xml_downloader.rb in Resources */ = {isa = PBXBuildFile; fileRef = 734D7715135598BC00962C60 /* async_xml_downloader.rb */; };
+		73502AC51358324B005A13A3 /* account.rb in Resources */ = {isa = PBXBuildFile; fileRef = 73502AC41358324B005A13A3 /* account.rb */; };
 		7352DC741341391A00F6FD44 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7352DC731341391A00F6FD44 /* Cocoa.framework */; };
-		7352DC761341391A00F6FD44 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7352DC751341391A00F6FD44 /* MacRuby.framework */; };
 		7352DC7D1341391A00F6FD44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC7B1341391A00F6FD44 /* InfoPlist.strings */; };
 		7352DC801341391A00F6FD44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7352DC7F1341391A00F6FD44 /* main.m */; };
 		7352DC841341391A00F6FD44 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7352DC821341391A00F6FD44 /* MainMenu.xib */; };
@@ -27,10 +31,14 @@
 		7323CB5C13490A04004F1886 /* destinations_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = destinations_controller.rb; sourceTree = "<group>"; };
 		7323CB5E13490B01004F1886 /* messages_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = messages_controller.rb; sourceTree = "<group>"; };
 		7323CB60134916FA004F1886 /* streams_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = streams_controller.rb; sourceTree = "<group>"; };
-		7323CB661349B9F8004F1886 /* socialcast.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socialcast.yml; sourceTree = "<group>"; };
+		732B5BBE13576A2700A556D4 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		732B5BC113578EFF00A556D4 /* preferences_controller.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = preferences_controller.rb; sourceTree = "<group>"; };
+		732B5BC31357929C00A556D4 /* interval.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = interval.rb; sourceTree = "<group>"; };
+		7347A59C135905E000E087D5 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MacRuby.framework; sourceTree = "<group>"; };
+		734D7715135598BC00962C60 /* async_xml_downloader.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = async_xml_downloader.rb; sourceTree = "<group>"; };
+		73502AC41358324B005A13A3 /* account.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = account.rb; sourceTree = "<group>"; };
 		7352DC6F1341391A00F6FD44 /* StatusCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7352DC731341391A00F6FD44 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		7352DC751341391A00F6FD44 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = System/Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		7352DC7A1341391A00F6FD44 /* StatusCast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatusCast-Info.plist"; sourceTree = "<group>"; };
 		7352DC7C1341391A00F6FD44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7352DC7E1341391A00F6FD44 /* StatusCast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StatusCast-Prefix.pch"; sourceTree = "<group>"; };
@@ -49,7 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7352DC741341391A00F6FD44 /* Cocoa.framework in Frameworks */,
-				7352DC761341391A00F6FD44 /* MacRuby.framework in Frameworks */,
+				7347A59D135905E000E087D5 /* MacRuby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +85,8 @@
 		7352DC721341391A00F6FD44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7347A59C135905E000E087D5 /* MacRuby.framework */,
 				7352DC731341391A00F6FD44 /* Cocoa.framework */,
-				7352DC751341391A00F6FD44 /* MacRuby.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				7352DC821341391A00F6FD44 /* MainMenu.xib */,
+				732B5BBE13576A2700A556D4 /* Preferences.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -124,13 +133,16 @@
 		73ED0CD81344E80700FCF0C3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				73502AC41358324B005A13A3 /* account.rb */,
 				737CAF03134FCB89008886EE /* destination.rb */,
-				7323CB661349B9F8004F1886 /* socialcast.yml */,
 				7352DC881341391A00F6FD44 /* AppDelegate.rb */,
 				7323CB5C13490A04004F1886 /* destinations_controller.rb */,
 				737CAF01134F5E2A008886EE /* status.rb */,
+				734D7715135598BC00962C60 /* async_xml_downloader.rb */,
 				7323CB5E13490B01004F1886 /* messages_controller.rb */,
 				7323CB60134916FA004F1886 /* streams_controller.rb */,
+				732B5BC113578EFF00A556D4 /* preferences_controller.rb */,
+				732B5BC31357929C00A556D4 /* interval.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -140,11 +152,12 @@
 /* Begin PBXLegacyTarget section */
 		7352DC771341391A00F6FD44 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed";
+			buildArgumentsString = "--compile --embed --bs";
 			buildConfigurationList = 7352DC8F1341391A00F6FD44 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/local/bin/macruby_deploy;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = Deployment;
@@ -206,10 +219,14 @@
 				7323CB5D13490A04004F1886 /* destinations_controller.rb in Resources */,
 				7323CB5F13490B01004F1886 /* messages_controller.rb in Resources */,
 				7323CB61134916FA004F1886 /* streams_controller.rb in Resources */,
-				7323CB671349B9F8004F1886 /* socialcast.yml in Resources */,
 				73DCD24F134D1CA500175BC2 /* gems in Resources */,
 				737CAF02134F5E2A008886EE /* status.rb in Resources */,
 				737CAF04134FCB89008886EE /* destination.rb in Resources */,
+				734D7716135598BC00962C60 /* async_xml_downloader.rb in Resources */,
+				732B5BBF13576A2700A556D4 /* Preferences.xib in Resources */,
+				732B5BC213578EFF00A556D4 /* preferences_controller.rb in Resources */,
+				732B5BC41357929C00A556D4 /* interval.rb in Resources */,
+				73502AC51358324B005A13A3 /* account.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +300,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -290,6 +311,7 @@
 				GCC_PREFIX_HEADER = "StatusCast/StatusCast-Prefix.pch";
 				INFOPLIST_FILE = "StatusCast/StatusCast-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -300,12 +322,17 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StatusCast/StatusCast-Prefix.pch";
 				INFOPLIST_FILE = "StatusCast/StatusCast-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

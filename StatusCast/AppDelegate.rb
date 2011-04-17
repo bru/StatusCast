@@ -32,26 +32,13 @@ class AppDelegate
   attr_accessor :window, :current_status, :statuses_table_view, :destination_popup, :streams_outline, :search_field
   
   def applicationDidFinishLaunching(a_notification)
-    # Insert code here to initialize your application
-    Socialcast.configuration do |socialcast|
-      socialcast.config_file = File.join(File.dirname(__FILE__), "socialcast.yml")
-    end
-    @api ||= ::Socialcast.api
-    
-    @current_status.stringValue = ""
-    
-    streams = StreamsController.new(@api)
-    streams_outline.dataSource=streams
-    streams_outline.delegate=self
-    
-    destinations = DestinationsController.new(@api)
-    destination_popup.dataSource = destinations    
-    destination_popup.selectItemAtIndex 0
-
-    messages = MessagesController.new(@api)
-    statuses_table_view.dataSource = messages
-    statuses_table_view.delegate= messages
-    
+    account = Account.instance
+    if Account.set?
+      setupSocialcastApi
+      setupMainWindow
+    else
+      showPreferencesWindow
+    end    
   end
   
   def setStatus(sender)
@@ -95,6 +82,65 @@ class AppDelegate
       statuses_table_view.dataSource.set_default_stream
     end
     refreshStatusList
+  end
+  
+  def showPreferencesWindow(sender=nil)
+    NSApplication.sharedApplication.activateIgnoringOtherApps(true)
+    PreferencesController.sharedController.showWindow(sender)
+  end
+  
+  
+  protected
+  
+  def setupMainWindow
+    @current_status.stringValue = ""
+    setupStreams
+    setupDestinations
+    setupMessages
+  end
+  
+  def setupSocialcastApi
+    @account = Account.instance
+    Socialcast.configuration do |socialcast|
+      socialcast.username = @account.username
+      socialcast.password = @account.password
+      socialcast.domain   = @account.domain
+    end
+    @api ||= ::Socialcast.api
+  end
+  
+  def setupStreams
+    streams = StreamsController.new(@api)
+    streams_outline.delegate=self
+    streams_outline.dataSource=streams
+    streams.download do |data|
+      streams.items = Socialcast::StreamList.parse(data).streams
+      streams.update_streams
+      streams_outline.reloadData
+    end
+  end
+  
+  def setupDestinations
+    destinations = DestinationsController.new(@api)
+    destination_popup.dataSource = destinations 
+    destinations.download do |data|
+      groups = Socialcast::GroupMembershipList.parse(data).group_memberships
+      destinations.items = Destination.from_socialcast_groups(groups.map {|membership| membership.group })
+      destinations.items.unshift Destination.new(0, "My Colleagues")
+      destination_popup.reloadData
+      destination_popup.selectItemAtIndex 0
+    end
+  end
+  
+  def setupMessages
+    messages = MessagesController.new(@api)
+    statuses_table_view.dataSource = messages
+    messages.download do |data|
+      socialcast_messages = Socialcast::MessageList.parse(data).messages
+      messages.items = Status.from_socialcast_messages(socialcast_messages)
+      statuses_table_view.reloadData
+    end
+    statuses_table_view.delegate= messages
   end
 end
 

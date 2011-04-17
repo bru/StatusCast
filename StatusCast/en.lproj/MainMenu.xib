@@ -1716,7 +1716,7 @@
 															<string key="NSFrameSize">{334, 415}</string>
 															<reference key="NSSuperview" ref="428923352"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="97596097"/>
+															<reference key="NSNextKeyView" ref="500236271"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="_NSCornerView" key="NSCornerView">
 																<nil key="NSNextResponder"/>
@@ -1742,16 +1742,16 @@
 																		<reference key="NSTextColor" ref="705483130"/>
 																	</object>
 																	<object class="NSImageCell" key="NSDataCell" id="822290032">
-																		<int key="NSCellFlags">604634624</int>
+																		<int key="NSCellFlags">67763712</int>
 																		<int key="NSCellFlags2">33685504</int>
 																		<object class="NSCustomResource" key="NSContents">
 																			<string key="NSClassName">NSImage</string>
 																			<string key="NSResourceName">NSUser</string>
 																		</object>
 																		<reference key="NSSupport" ref="26"/>
-																		<int key="NSAlign">0</int>
+																		<int key="NSAlign">1</int>
 																		<int key="NSScale">3</int>
-																		<int key="NSStyle">2</int>
+																		<int key="NSStyle">0</int>
 																		<bool key="NSAnimates">NO</bool>
 																	</object>
 																	<reference key="NSTableView" ref="562084479"/>
@@ -1816,6 +1816,7 @@
 													<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 													<reference key="NSSuperview" ref="1054273582"/>
 													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView"/>
 													<reference key="NSTarget" ref="1054273582"/>
 													<string key="NSAction">_doScroller:</string>
 													<double key="NSPercent">0.99652777777777779</double>
@@ -1836,7 +1837,7 @@
 											<string key="NSFrameSize">{336, 417}</string>
 											<reference key="NSSuperview" ref="116086778"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="428923352"/>
+											<reference key="NSNextKeyView" ref="97596097"/>
 											<int key="NSsFlags">530</int>
 											<reference key="NSVScroller" ref="500236271"/>
 											<reference key="NSHScroller" ref="97596097"/>
@@ -1910,7 +1911,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="560118039"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -2671,6 +2672,14 @@
 					</object>
 					<int key="connectionID">620</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showPreferencesWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="609285721"/>
+					</object>
+					<int key="connectionID">621</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2713,6 +2722,7 @@
 							<reference ref="448692316"/>
 						</object>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Main Menu</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
@@ -4520,7 +4530,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">620</int>
+			<int key="maxID">621</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4534,9 +4544,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>search:</string>
 							<string>setStatus:</string>
+							<string>showPreferencesWindow:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -4547,6 +4559,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>search:</string>
 							<string>setStatus:</string>
+							<string>showPreferencesWindow:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4556,6 +4569,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">setStatus:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showPreferencesWindow:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

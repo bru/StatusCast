@@ -33,7 +33,6 @@
 # do that here too.
 framework 'Cocoa'
 require 'date'
-require 'yaml'
 
 # Loading all the Ruby project files.
 main = File.basename(__FILE__, File.extname(__FILE__))
