@@ -32,14 +32,24 @@
 
 
 class MessagesController
+  attr_accessor :items
+  include ::AsyncXMLDownloader
+  
   def initialize(api=nil)
     @api = api
+    @items = []
     @stream = nil
-    update_messages
+    @heights = []
+    set_url(messages_url, @api.username, @api.password)
+  end
+  
+  def messages_url
+    stream_path = "streams/#{stream.id}/" if @stream
+    "#{@api.endpoint}#{stream_path}messages.xml"
   end
   
   def update_messages
-    @messages = Status.from_socialcast_messages(@api.messages(@stream))
+    @items = Status.from_socialcast_messages(@api.messages(@stream))
   end
   
   def set_stream(stream)
@@ -51,20 +61,19 @@ class MessagesController
   end
   
   def set_search(query)
-    @messages = Status.from_socialcast_messages(@api.search(:q => query))
+    @items = Status.from_socialcast_messages(@api.search(:q => query))
   end
   
   def numberOfRowsInTableView(view)
-    @messages.size
+    @items.size
   end
 
   def tableView(view, willDisplayCell:cell, forTableColumn:column, row:row)
     case column.identifier
     when 'avatar'
       if cell.image.name == "NSUser"
-        status = @messages[row]
+        status = @items[row]
         status.download do |data|
-          NSLog("Loaded image for avatar on row #{row.to_s}")
           status.image = NSImage.alloc.initWithData data
           view.reloadDataForRowIndexes NSIndexSet.indexSetWithIndex(row), columnIndexes:NSIndexSet.indexSetWithIndex(0)
         end
@@ -73,12 +82,41 @@ class MessagesController
   end
   
   def tableView(view, objectValueForTableColumn:column, row:row)
-    status = @messages[row]
+    status = @items[row]
     status.send column.identifier, column.dataCellForRow(row)
   end
 
   def tableView(view, shouldTrackCell:cell, forTableColumn:column, row:index)
     true
+  end
+  
+  def tableView(view, heightOfRow:row)
+    return @heights[row] unless @heights[row].nil?
+    
+    text_column = view.tableColumnWithIdentifier("text")
+    text_width = text_column.width
+
+    message_height = 0
+    if @items[row] && @items[row].formatted_message
+      message = @items[row].formatted_message
+      cell = NSTextFieldCell.new
+      cell.setObjectValue message
+      cell.setWraps true
+      
+      size = CGSize.new
+      size.width = text_width
+      size.height = 10000
+      rect = CGRect.new
+      rect.size = size
+      
+      message_height = cell.cellSizeForBounds(rect).height
+    end
+    #if @items[row] && @items[row].formatted_message 
+    #  height = @items[row].formatted_message.size.height.floor
+    #  NSLog("found row with size #{height}")
+    #end
+    @heights[row] = [message_height.floor, 75].max
+    return @heights[row]
   end
   
   

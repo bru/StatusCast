@@ -31,11 +31,15 @@
 
 class DestinationsController
   attr_accessor :items
-  
+  include ::AsyncXMLDownloader
   def initialize(api)
     @api = api
-    @items = Destination.from_socialcast_groups(@api.groups.map {|membership| membership.group })
-    @items.unshift Destination.new(0, "My Colleagues")
+    @items = []
+    set_url(groups_url, @api.username, @api.password)
+  end
+    
+  def groups_url
+    "#{@api.endpoint}group_memberships.xml"
   end
   
   def numberOfItemsInComboBox(view)

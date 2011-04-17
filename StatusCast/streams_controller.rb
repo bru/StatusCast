@@ -29,17 +29,29 @@
 #  
 
 
-
 class StreamsController
-  attr_accessor :items
-  
+  attr_accessor :items, :streams
+
+  include ::AsyncXMLDownloader
+
   def initialize(api)
     @api = api
-    @items = @api.streams
+    @items = []
     @streams = []
+    set_url(streams_url, @api.username, @api.password)
+  end
+  
+  def streams_url
+    "#{@api.endpoint}streams.xml"
+  end
+  
+  
+  def update_streams
     @streams << { key: "Activity Streams", value: @items.select { |item| item.group.nil? } }
     @streams << { key: "Groups", value:  @items.reject { |item| item.group.nil? } }
   end
+
+
   
   def outlineView(view, numberOfChildrenOfItem:item)
     return @streams.size if item.nil?
