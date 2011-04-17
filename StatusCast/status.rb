@@ -13,13 +13,7 @@ class Status
       @url = nil
     end
     
-    #if @url      
-    #  @image = NSImage.alloc.initByReferencingURL @url
-    #else
-      @image = NSImage.imageNamed 'NSUser'
-    #end
-
-    
+    @image = NSImage.imageNamed 'NSUser'
   end
 
   def self.from_socialcast_messages(messages)
@@ -31,6 +25,10 @@ class Status
   end
 
   def text(cell)
+    return formatted_message
+  end
+
+  def formatted_message
     user_font  = NSFont.fontWithName("Helvetica", size: 11.0)
     user_color = NSColor.purpleColor
     date_font  = NSFont.fontWithName("Helvetica", size: 11.0)
@@ -40,7 +38,7 @@ class Status
     date_attributes = { NSFontAttributeName => date_font, NSForegroundColorAttributeName => date_color}
     title_attributes = { NSFontAttributeName => title_font }
     
-
+    
     user_string = NSAttributedString.alloc.initWithString(@message.user.name, attributes: user_attributes) if @message.user.name
     date_string = NSAttributedString.alloc.initWithString(" on #{DateTime.parse(@message.created_at).strftime('%d/%m/%Y %H:%M')}\n", attributes: date_attributes) 
     body_string = NSAttributedString.alloc.initWithString(@message.body) if @message.body
@@ -53,7 +51,7 @@ class Status
     message_string.appendAttributedString(body_string)  if body_string
     return message_string
   end
-
+  
   def download(&block)
     return if @loading || @url.nil?
     @loading = true
@@ -62,29 +60,25 @@ class Status
     request = NSURLRequest.requestWithURL @url
     connection = NSURLConnection.alloc.initWithRequest request, delegate:self, startImmediately:true
     if connection
-      NSLog("Status#download (#{@url.relativeString.gsub(/^(.*)\//,'')})")
+      # NSLog("Status#download (#{@url.relativeString.gsub(/^(.*)\//,'')})")
     else
       NSLog("Status#download FAILED - #{@url.relativeString.gsub(/^(.*)\//,'')} :(")
     end
   end
 
   def connection(connection, didReceiveResponse:response)
-    NSLog("Status#didReceiveResponse - #{@url.relativeString.gsub(/^(.*)\//,'')}")
     @data.setLength 0
   end
 
   def connection(connection, didReceiveData:data)
-    NSLog("Status#didReceiveData - #{@url.relativeString.gsub(/^(.*)\//,'')}")
     @data.appendData data
   end
 
   def connection(connection, didFailWithError:error)
-    NSLog("Status#didFailWithError - #{@url.relativeString.gsub(/^(.*)\//,'')}")
     @loading = false
   end
 
   def connectionDidFinishLoading(connection)
-    NSLog("Status#didFinishLoading - #{@url.relativeString}")
     @block.call @data
     @loading = false
   end
